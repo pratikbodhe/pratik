@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Customer Rgistration</title>
+    <link rel="stylesheet" href="customer.css">
+    <script src="customer.js"></script>
+</head>
+<body>
+
+    <script>
+
+
+        function addCustomer(){
+            var name = document.querySelector("#name").value;
+            var address = document.querySelector("#address").value;
+            var amount = document.querySelector("#amount").value;
+
+            var customer = CustomerModule.Customer();
+            customer.setName(name);
+            customer.setAddress(address);
+            customer.setAmount(amount);
+
+            document.querySelector("#outputname").innerText = customer.getName();
+            document.querySelector("#outputaddress").innerText = customer.getAddress();
+            document.querySelector("#outputamount").innerText = customer.getAmount();
+            document.querySelector(".output").style.display = "block";
+
+
+        }
+    </script>
+
+
+
+<table class="input-content">
+    
+    <tr>
+        <td>Name </td>
+        <td><input type="text"  id="name" placeholder="Enter your name"></td>
+    </tr>
+    <tr>
+        <td>Address </td>
+        <td><textarea  id="address" cols="30" rows="10" placeholder="Enter your address"></textarea></td>
+    </tr>
+    <tr>
+        <td>Amount </td>
+        <td><input type="number"  id="amount" placeholder="Enter your "></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="Add" onclick="addCustomer()" class="button"></td>
+    </tr>
+</table>
+            
+
+<table class="output">
+    
+    <tr>
+        <td>Name </td>
+        <td><h5 id="outputname"></h5></td>
+    </tr>
+    <tr>
+        <td>Address </td>
+        <td><h5 id="outputaddress"></h5></td>
+    </tr>
+    <tr>
+        <td>Amount </td>
+        <td><h5 id="outputamount"></h5></td>
+    </tr>
+</table>
+        
+    
+</body>
+</html>
